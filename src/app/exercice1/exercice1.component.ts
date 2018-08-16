@@ -6,11 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercice1.component.css']
 })
 export class Exercice1Component implements OnInit {
-  public compteur: number = 0; 
+
+  public compteur: number = 23;
 
   constructor() { }
 
   ngOnInit() {
+    console.log("ngOnInit de Exercice1Component. compteur:" + this.compteur);
+  }
+
+  public compteurParent(cmpTransmit: number): void {
+    console.log("compteurParent : event.value:" + cmpTransmit);
+    this.compteur = cmpTransmit;
   }
 
 }
